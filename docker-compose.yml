@@ -2,7 +2,7 @@ version: '3.8'
 
 services:
   spark:
-    image: bitnami/spark:3.5
+    image: apache/spark:3.5.0
     environment:
       - SPARK_MODE=master
     ports:
@@ -14,7 +14,7 @@ services:
       - ./src:/opt/src
 
   spark-worker:
-    image: bitnami/spark:3.5
+    image: apache/spark:3.5.0
     environment:
       - SPARK_MODE=worker
       - SPARK_MASTER_URL=spark://spark:7077

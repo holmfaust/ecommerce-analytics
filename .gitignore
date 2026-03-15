@@ -1,4 +1,30 @@
+# Virtual Environment
 venv/
 __pycache__/
 *.pyc
 .env
+.DS_Store
+
+# Jupyter Notebooks checkpoints
+.ipynb_checkpoints/
+**/.ipynb_checkpoints/
+
+# Data — ไม่ต้อง commit (ข้อมูลใหญ่ / generated จาก pipeline)
+# Bronze: ข้อมูลดิบ (120MB+) — ในอนาคตจะเก็บบน Azure Blob Storage
+data/bronze/
+# Silver และ Gold: generated จาก pipeline
+data/silver/
+data/gold/
+
+# Delta Lake internal files
+**/_delta_log/
+*.parquet
+*.crc
+
+# Spark temp files
+derby.log
+metastore_db/
+spark-warehouse/
+
+# Logs
+*.log
